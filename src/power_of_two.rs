@@ -1,4 +1,5 @@
-fn power_of_two(x: u64) -> bool {
+#[allow(dead_code)]
+pub fn power_of_two(x: u64) -> bool {
     match x {
         0 => false,
         1 => true,
