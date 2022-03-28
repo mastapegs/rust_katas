@@ -5,3 +5,4 @@ mod odd_or_even;
 mod power_of_two;
 mod string_ends_with;
 mod strong_number;
+mod sum_of_cubes;
