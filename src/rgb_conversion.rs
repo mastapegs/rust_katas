@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 enum HexValidity {
     TooHigh,
     TooLow,
@@ -19,39 +17,10 @@ impl From<i32> for HexValidity {
 }
 
 fn hex(number: i32) -> String {
-    let hex_map: HashMap<i32, String> = HashMap::from([
-        (0, "0".to_string()),
-        (1, "1".to_string()),
-        (2, "2".to_string()),
-        (3, "3".to_string()),
-        (4, "4".to_string()),
-        (5, "5".to_string()),
-        (6, "6".to_string()),
-        (7, "7".to_string()),
-        (8, "8".to_string()),
-        (9, "9".to_string()),
-        (10, "A".to_string()),
-        (11, "B".to_string()),
-        (12, "C".to_string()),
-        (13, "D".to_string()),
-        (14, "E".to_string()),
-        (15, "F".to_string()),
-    ]);
-
     match HexValidity::from(number) {
         HexValidity::TooLow => "00".to_string(),
         HexValidity::TooHigh => "FF".to_string(),
-        HexValidity::InRange(number) => {
-            let mut number_in_progress = number;
-            let mut hex_chars: Vec<String> = vec![];
-
-            hex_chars.push(hex_map.get(&(number_in_progress / 16)).unwrap().to_owned());
-            number_in_progress = number_in_progress % 16;
-
-            hex_chars.push(hex_map.get(&number_in_progress).unwrap().to_owned());
-
-            hex_chars.join("")
-        }
+        HexValidity::InRange(number) => format!("{:0>2X}", number),
     }
 }
 
