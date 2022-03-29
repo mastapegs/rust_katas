@@ -19,6 +19,7 @@ fn clean_string(s: &str) -> String {
                     characters.remove(pound_location - 1);
                 }
             }
+
             clean_string(
                 &characters
                     .iter()
