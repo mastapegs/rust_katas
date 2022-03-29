@@ -1,4 +1,5 @@
 mod automorphic_number;
+mod backspaces_in_string;
 mod bookseller;
 mod create_phone_number;
 mod even_fib;
