@@ -1,25 +1,30 @@
 #[allow(dead_code)]
 fn stock_list(list_art: Vec<&str>, list_cat: Vec<&str>) -> String {
-    list_cat
-        .iter()
-        .map(|category| {
-            format!(
-                "({category} : {count})",
-                count = {
-                    list_art
-                        .iter()
-                        .filter(|book| book.starts_with(category))
-                        .map(|book| {
-                            book.split_whitespace().collect::<Vec<&str>>()[1]
-                                .parse::<i32>()
-                                .unwrap()
-                        })
-                        .sum::<i32>()
-                }
-            )
-        })
-        .collect::<Vec<String>>()
-        .join(" - ")
+    match (list_art.is_empty(), list_cat.is_empty()) {
+        (true, false) => "".to_string(),
+        (false, true) => "".to_string(),
+        (true, true) => "".to_string(),
+        (false, false) => list_cat
+            .iter()
+            .map(|category| {
+                format!(
+                    "({category} : {count})",
+                    count = {
+                        list_art
+                            .iter()
+                            .filter(|book| book.starts_with(category))
+                            .map(|book| {
+                                book.split_whitespace().collect::<Vec<&str>>()[1]
+                                    .parse::<i32>()
+                                    .unwrap()
+                            })
+                            .sum::<i32>()
+                    }
+                )
+            })
+            .collect::<Vec<String>>()
+            .join(" - "),
+    }
 }
 
 #[cfg(test)]
@@ -46,5 +51,12 @@ mod tests {
         b = vec!["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"];
         c = vec!["A", "B"];
         dotest(b, c, "(A : 200) - (B : 1140)");
+    }
+
+    #[test]
+    fn advanced_tests() {
+        let mut b = vec![];
+        let mut c = vec!["B", "R", "D", "X"];
+        dotest(b, c, "")
     }
 }
