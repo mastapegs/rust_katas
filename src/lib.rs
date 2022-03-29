@@ -8,3 +8,4 @@ mod rgb_conversion;
 mod string_ends_with;
 mod strong_number;
 mod sum_of_cubes;
+mod word_values;
