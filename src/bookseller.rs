@@ -1,9 +1,6 @@
 #[allow(dead_code)]
 fn stock_list(list_art: Vec<&str>, list_cat: Vec<&str>) -> String {
     match (list_art.is_empty(), list_cat.is_empty()) {
-        (true, false) => "".to_string(),
-        (false, true) => "".to_string(),
-        (true, true) => "".to_string(),
         (false, false) => list_cat
             .iter()
             .map(|category| {
@@ -24,6 +21,7 @@ fn stock_list(list_art: Vec<&str>, list_cat: Vec<&str>) -> String {
             })
             .collect::<Vec<String>>()
             .join(" - "),
+        _ => "".to_string(),
     }
 }
 
