@@ -55,8 +55,8 @@ mod tests {
 
     #[test]
     fn advanced_tests() {
-        let mut b = vec![];
-        let mut c = vec!["B", "R", "D", "X"];
+        let b = vec![];
+        let c = vec!["B", "R", "D", "X"];
         dotest(b, c, "")
     }
 }
