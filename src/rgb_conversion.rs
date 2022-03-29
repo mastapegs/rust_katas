@@ -29,6 +29,7 @@ fn rgb(r: i32, g: i32, b: i32) -> String {
     format!("{}{}{}", hex(r), hex(g), hex(b))
 }
 
+#[allow(unused_macros)]
 macro_rules! compare {
     ( $got : expr, $expected : expr ) => {
         if $got != $expected {
