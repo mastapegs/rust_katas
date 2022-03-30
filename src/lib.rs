@@ -2,7 +2,7 @@
 #![allow(clippy::pedantic)]
 #![allow(clippy::restriction)]
 #![allow(clippy::nursery)]
-#![allow(clippy::cargo)]
+#![deny(clippy::cargo)]
 
 mod automorphic_number;
 mod backspaces_in_string;

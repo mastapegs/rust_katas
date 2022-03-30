@@ -1,7 +1,13 @@
 [package]
-name = "code_wars_katas"
-version = "0.1.0"
+categories = ["rust", "katas"]
+description = "A collection of tested Rust code katas"
 edition = "2021"
+keywords = ["rust", "katas"]
+license = "MIT"
+name = "code_wars_katas"
+readme = "README.md"
+repository = "https://github.com/mastapegs/rust_katas"
+version = "0.1.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
