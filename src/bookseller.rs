@@ -1,5 +1,5 @@
 #[allow(dead_code)]
-fn stock_list(list_art: Vec<&str>, list_cat: Vec<&str>) -> String {
+fn stock_list(list_art: &[&str], list_cat: &[&str]) -> String {
     match (list_art.is_empty(), list_cat.is_empty()) {
         (false, false) => list_cat
             .iter()
@@ -32,7 +32,7 @@ mod tests {
     fn dotest(list_art: Vec<&str>, list_cat: Vec<&str>, exp: &str) -> () {
         println!("list_art: {:?};", list_art);
         println!("list_cat: {:?};", list_cat);
-        let ans = stock_list(list_art, list_cat);
+        let ans = stock_list(&list_art, &list_cat);
         println!("actual:\n{:?};", ans);
         println!("expect:\n{:?};", exp);
         println!("{};", ans == exp);
