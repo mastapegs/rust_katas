@@ -1,7 +1,7 @@
 #[allow(dead_code)]
 fn adjacent_elements_product(xs: &[i32]) -> i32 {
     xs.windows(2)
-        .map(|pair_of_numbers| pair_of_numbers.into_iter().fold(1, |a, b| a * b))
+        .map(|pair_of_numbers| pair_of_numbers.iter().product())
         .max()
         .unwrap()
 }

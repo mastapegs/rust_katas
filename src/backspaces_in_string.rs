@@ -4,12 +4,12 @@
 
 #[allow(dead_code)]
 fn clean_string(s: &str) -> String {
-    match s.contains("#") {
+    match s.contains('#') {
         false => s.to_string(),
         true => {
             let mut characters = s.chars().collect::<Vec<char>>();
 
-            let pound_location = s.find("#").unwrap();
+            let pound_location = s.find('#').unwrap();
             match pound_location {
                 0 => {
                     characters.remove(0);

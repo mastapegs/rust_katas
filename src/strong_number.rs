@@ -1,5 +1,5 @@
 fn factorial(number: u64) -> u64 {
-    (1..=number).fold(1, |a, b| a * b)
+    (1..=number).product()
 }
 
 #[allow(dead_code)]

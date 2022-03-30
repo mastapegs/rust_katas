@@ -7,7 +7,7 @@ fn single_word_value(word: &str) -> i32 {
         .collect::<Vec<&str>>()
         .join("")
         .chars()
-        .map(|char| single_char_value(char))
+        .map(single_char_value)
         .sum()
 }
 

@@ -1,3 +1,5 @@
+use std::cmp::Ordering;
+
 #[allow(dead_code)]
 pub fn power_of_two(x: u64) -> bool {
     match x {
@@ -6,13 +8,10 @@ pub fn power_of_two(x: u64) -> bool {
         x => {
             let mut exponent = 1;
             loop {
-                let current_power_of_two = 2_u64.pow(exponent);
-                if x == current_power_of_two {
-                    break true;
-                } else if x > current_power_of_two {
-                    exponent = exponent + 1;
-                } else {
-                    break false;
+                match x.cmp(&2_u64.pow(exponent)) {
+                    Ordering::Equal => break true,
+                    Ordering::Greater => exponent += 1,
+                    Ordering::Less => break false,
                 }
             }
         }
