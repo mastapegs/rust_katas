@@ -24,13 +24,13 @@ mod tests {
 
     #[test]
     fn basic_tests() {
-        assert_eq!(power_of_two(0), false);
-        assert_eq!(power_of_two(2), true);
-        assert_eq!(power_of_two(5), false);
-        assert_eq!(power_of_two(6), false);
-        assert_eq!(power_of_two(8), true);
-        assert_eq!(power_of_two(1024), true);
-        assert_eq!(power_of_two(4096), true);
-        assert_eq!(power_of_two(8191), false);
+        assert!(!power_of_two(0));
+        assert!(power_of_two(2));
+        assert!(!power_of_two(5));
+        assert!(!power_of_two(6));
+        assert!(power_of_two(8));
+        assert!(power_of_two(1024));
+        assert!(power_of_two(4096));
+        assert!(!power_of_two(8191));
     }
 }

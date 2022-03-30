@@ -12,7 +12,7 @@ mod tests {
 
     #[test]
     fn returns_expected() {
-        assert_eq!(true, solution("abc", "c"));
-        assert_eq!(false, solution("strawberry", "banana"));
+        assert!(solution("abc", "c"));
+        assert!(!solution("strawberry", "banana"));
     }
 }
