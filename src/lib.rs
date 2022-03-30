@@ -1,3 +1,9 @@
+#![deny(clippy::all)]
+#![allow(clippy::pedantic)]
+#![allow(clippy::restriction)]
+#![allow(clippy::nursery)]
+#![allow(clippy::cargo)]
+
 mod automorphic_number;
 mod backspaces_in_string;
 mod bookseller;
