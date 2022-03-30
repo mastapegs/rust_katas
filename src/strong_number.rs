@@ -4,14 +4,15 @@ fn factorial(number: u64) -> u64 {
 
 #[allow(dead_code)]
 fn strong(n: u64) -> String {
-    match n
-        == n.to_string()
-            .chars()
-            .map(|char| factorial(char.to_string().parse::<u64>().unwrap()))
-            .sum()
+    if n == n
+        .to_string()
+        .chars()
+        .map(|char| factorial(char.to_string().parse::<u64>().unwrap()))
+        .sum()
     {
-        true => "STRONG!!!!".to_string(),
-        false => "Not Strong !!".to_string(),
+        "STRONG!!!!".to_string()
+    } else {
+        "Not Strong !!".to_string()
     }
 }
 

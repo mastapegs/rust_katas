@@ -12,6 +12,6 @@ mod tests {
     #[test]
     fn returns_expected() {
         assert_eq!(23, multiple_3_5_sum(10));
-        assert_eq!(233168, multiple_3_5_sum(1000));
+        assert_eq!(233_168, multiple_3_5_sum(1000));
     }
 }

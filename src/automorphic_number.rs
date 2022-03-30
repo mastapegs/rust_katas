@@ -1,8 +1,9 @@
 #[allow(dead_code)]
 fn automorphic(n: u64) -> String {
-    match n.pow(2).to_string().ends_with(&n.to_string()) {
-        true => "Automorphic".to_string(),
-        false => "Not!!".to_string(),
+    if n.pow(2).to_string().ends_with(&n.to_string()) {
+        "Automorphic".to_string()
+    } else {
+        "Not!!".to_string()
     }
 }
 

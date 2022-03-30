@@ -1,8 +1,8 @@
-fn single_char_value(char: char) -> i32 {
-    (char as u8) as i32 - 96
+fn single_char_value(char: char) -> usize {
+    char as usize - 96
 }
 
-fn single_word_value(word: &str) -> i32 {
+fn single_word_value(word: &str) -> usize {
     word.split_whitespace()
         .collect::<Vec<&str>>()
         .join("")
@@ -12,12 +12,12 @@ fn single_word_value(word: &str) -> i32 {
 }
 
 #[allow(dead_code)]
-fn word_value(words: &[&str]) -> Vec<i32> {
+fn word_value(words: &[&str]) -> Vec<usize> {
     words
         .iter()
         .map(|word| single_word_value(word))
         .enumerate()
-        .map(|(index, value)| value * ((index + 1) as i32))
+        .map(|(index, value)| value * (index + 1))
         .collect()
 }
 

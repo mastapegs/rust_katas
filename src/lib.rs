@@ -1,5 +1,5 @@
 #![deny(clippy::all)]
-#![allow(clippy::pedantic)]
+#![warn(clippy::pedantic)]
 #![allow(clippy::restriction)]
 #![allow(clippy::nursery)]
 #![deny(clippy::cargo)]

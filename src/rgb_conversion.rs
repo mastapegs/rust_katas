@@ -40,7 +40,7 @@ macro_rules! compare {
 
 #[cfg(test)]
 mod sample_tests {
-    use self::super::*;
+    use self::super::rgb;
 
     #[test]
     fn tests() {

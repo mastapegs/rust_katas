@@ -4,30 +4,20 @@
 
 #[allow(dead_code)]
 fn clean_string(s: &str) -> String {
-    match s.contains('#') {
-        false => s.to_string(),
-        true => {
-            let mut characters = s.chars().collect::<Vec<char>>();
+    if s.contains('#') {
+        let mut characters = s.chars().collect::<Vec<char>>();
 
-            let pound_location = s.find('#').unwrap();
-            match pound_location {
-                0 => {
-                    characters.remove(0);
-                }
-                _ => {
-                    characters.remove(pound_location);
-                    characters.remove(pound_location - 1);
-                }
-            }
-
-            clean_string(
-                &characters
-                    .iter()
-                    .map(|char| char.to_string())
-                    .collect::<Vec<String>>()
-                    .join(""),
-            )
+        let pound_location = s.find('#').unwrap();
+        if pound_location == 0 {
+            characters.remove(0);
+        } else {
+            characters.remove(pound_location);
+            characters.remove(pound_location - 1);
         }
+
+        clean_string(&characters.iter().map(char::to_string).collect::<String>())
+    } else {
+        s.to_string()
     }
 }
 

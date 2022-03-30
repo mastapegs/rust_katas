@@ -1,5 +1,5 @@
 fn numbers_to_string(numbers: &[u8]) -> String {
-    numbers.iter().map(|number| number.to_string()).collect()
+    numbers.iter().map(u8::to_string).collect()
 }
 
 #[allow(dead_code)]
