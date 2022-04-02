@@ -7,6 +7,7 @@
 mod automorphic_number;
 mod backspaces_in_string;
 mod bookseller;
+mod bool_to_word;
 mod create_phone_number;
 mod even_fib;
 mod maximum_product;
